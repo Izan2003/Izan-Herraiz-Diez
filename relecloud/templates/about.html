@@ -1,4 +1,28 @@
-{% extends "base.html" %} {% block title %}About Page{% endblock %} {% block content %}
-<h1>About Us</h1>
-<p>This is the about page of our Django project. Here you can find information about our company, team, or project.</p>
+{% extends 'base.html' %} {% block title %}About{% endblock %} {% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">About Us</h1>
+    <p class="lead">Learn more about our mission and values.</p>
+    <hr class="my-4">
+    <p>We are committed to providing the best service possible.</p>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Our Mission">
+            <div class="card-body">
+                <h5 class="card-title">Our Mission</h5>
+                <p class="card-text">Details about the mission.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Our Values">
+            <div class="card-body">
+                <h5 class="card-title">Our Values</h5>
+                <p class="card-text">Details about the values.</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

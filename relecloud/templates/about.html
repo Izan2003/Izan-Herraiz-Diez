@@ -1,41 +1,4 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Welcome to the Home Page</h1>
-        <a href="{% url 'index' %}" class="btn">Go to About</a>
-    </div>
-</body>
-
-</html>
+{% extends "base.html" %} {% block title %}About Page{% endblock %} {% block content %}
+<h1>About Us</h1>
+<p>This is the about page of our Django project. Here you can find information about our company, team, or project.</p>
+{% endblock %}

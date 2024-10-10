@@ -1,28 +1,140 @@
-{% extends 'base.html' %} {% block title %}About{% endblock %} {% block content %}
-<div class="jumbotron text-center">
-    <h1 class="display-4">About Us</h1>
-    <p class="lead">Learn more about our mission and values.</p>
-    <hr class="my-4">
-    <p>We are committed to providing the best service possible.</p>
+{% extends 'base.html' %} {% block title %}About - Django Blog{% endblock %} {% block content %}
+<div class="jumbotron" style="background-image: url('https://source.unsplash.com/1600x900/?team,office');">
+    <div class="container text-center">
+        <h1 class="display-4">About Django Blog</h1>
+        <p class="lead">Learn more about our team and mission</p>
+    </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Our Mission">
-            <div class="card-body">
-                <h5 class="card-title">Our Mission</h5>
-                <p class="card-text">Details about the mission.</p>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Our Story</h2>
+            <p>Django Blog was founded in 2020 by a group of passionate developers who wanted to create a platform for sharing knowledge and experiences in web development, particularly focusing on Django and Python.</p>
+            <p>Since our inception, we've grown into a thriving community of developers, designers, and tech enthusiasts from all around the world. Our mission is to provide high-quality, accessible content that helps both beginners and experienced developers
+                improve their skills and stay up-to-date with the latest trends in web development.</p>
+
+            <h2 class="mt-5">Our Team</h2>
+            <div class="row">
+                {% for i in '1234'|make_list %}
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/400x400/?portrait" class="card-img-top" alt="Team member">
+                        <div class="card-body">
+                            <h5 class="card-title">John Doe</h5>
+                            <p class="card-text">Senior Django Developer</p>
+                            <div class="social-icons">
+                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="text-decoration-none"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h2 class="mt-5">Our Values</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-lightbulb text-primary me-2"></i>Innovation</h5>
+                            <p class="card-text">We strive to stay at the forefront of web development technologies and practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-users text-primary me-2"></i>Community</h5>
+                            <p class="card-text">We believe in the power of community and collaborative learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-book-open text-primary me-2"></i>Education</h5>
+                            <p class="card-text">We are committed to providing high-quality educational content for developers of all levels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-lock text-primary me-2"></i>Integrity</h5>
+                            <p class="card-text">We uphold the highest standards of integrity in our content and community interactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Quick Facts</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Founded
+                        <span class="badge bg-primary rounded-pill">2020</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Team Members
+                        <span class="badge bg-primary rounded-pill">15</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Articles Published
+                        <span class="badge bg-primary rounded-pill">500+</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Community Members
+                        <span class="badge bg-primary rounded-pill">10,000+</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Our Achievements</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-trophy text-warning me-2"></i> Best Tech Blog 2022</li>
+                        <li><i class="fas fa-award text-info me-2"></i> Top Django Resource 2021</li>
+                        <li><i class="fas fa-certificate text-success me-2"></i> Community Choice Award 2023</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Contact Us</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Our Values">
-            <div class="card-body">
-                <h5 class="card-title">Our Values</h5>
-                <p class="card-text">Details about the values.</p>
-            </div>
-        </div>
-    </div>
 </div>
+{% endblock %} {% block extra_js %}
+<script>
+    // You can add custom JavaScript for the about page here
+    console.log('About page loaded');
+</script>
 {% endblock %}

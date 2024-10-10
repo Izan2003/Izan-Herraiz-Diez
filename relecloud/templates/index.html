@@ -1,41 +1,113 @@
-{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %}
-<div class="jumbotron text-center">
-    <h1 class="display-4">Welcome to MySite!</h1>
-    <p class="lead">This is the home page of your Django project.</p>
-    <hr class="my-4">
-    <p>Explore the site to learn more about what we offer.</p>
-    <a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Learn more</a>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Feature 1">
-            <div class="card-body">
-                <h5 class="card-title">Feature 1</h5>
-                <p class="card-text">Some information about feature 1.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Feature 2">
-            <div class="card-body">
-                <h5 class="card-title">Feature 2</h5>
-                <p class="card-text">Some information about feature 2.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Feature 3">
-            <div class="card-body">
-                <h5 class="card-title">Feature 3</h5>
-                <p class="card-text">Some information about feature 3.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-            </div>
-        </div>
+{% extends 'base.html' %} {% block title %}Home - Django Blog{% endblock %} {% block content %}
+<div class="jumbotron" style="background-image: url('https://source.unsplash.com/1600x900/?technology,code');">
+    <div class="container text-center">
+        <h1 class="display-4">Welcome to Django Blog</h1>
+        <p class="lead">Explore the world of web development with Django and Python</p>
+        <a href="#" class="btn btn-primary btn-lg">Start Reading</a>
     </div>
 </div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="mb-4">Latest Posts</h2>
+            <div class="row">
+                {% for i in '123'|make_list %}
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/400x300/?technology" class="card-img-top" alt="Blog post image">
+                        <div class="card-body">
+                            <h5 class="card-title">Django Best Practices for 2023</h5>
+                            <p class="card-text">Learn about the latest Django best practices to improve your web development skills and create efficient, scalable applications.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">Read More</a>
+                                <small class="text-muted">5 min read</small>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <i class="far fa-user"></i> John Doe
+                            <i class="far fa-clock ms-2"></i> 2 days ago
+                            <i class="far fa-comment ms-2"></i> 3 comments
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <nav aria-label="Blog pagination">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Categories</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Django
+                        <span class="badge bg-primary rounded-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Python
+                        <span class="badge bg-primary rounded-pill">21</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Web Development
+                        <span class="badge bg-primary rounded-pill">18</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Database
+                        <span class="badge bg-primary rounded-pill">9</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Popular Tags</h5>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Django</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Python</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Web Development</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Database</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">API</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Security</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Frontend</a>
+                    <a href="#" class="btn btn-outline-primary btn-sm m-1">Backend</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Newsletter</h5>
+                </div>
+                <div class="card-body">
+                    <p>Subscribe to our newsletter for the latest updates and articles.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script>
+    // You can add custom JavaScript for the index page here
+    console.log('Index page loaded');
+</script>
 {% endblock %}

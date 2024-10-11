@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Django Project{% endblock %}</title>
+    <title>{% block title %}Relecloud Space Tourism{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: #000;
+            color: #fff;
         }
         
         .content {
@@ -18,16 +20,36 @@
         }
         
         footer {
-            background-color: #f8f9fa;
+            background-color: #222;
             padding: 1rem 0;
             text-align: center;
+            color: #fff;
+        }
+        
+        .navbar {
+            background-color: #222;
+        }
+        
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important;
+        }
+        
+        .jumbotron {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .card {
+            background-color: #444;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'index' %}">MySite</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{% url 'index' %}">Relecloud</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,6 +60,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'destinations' %}">Destinations</a>
                 </li>
             </ul>
         </div>
@@ -51,7 +76,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 MySite. All rights reserved.</p>
+            <p>&copy; 2023 Relecloud. All rights reserved.</p>
         </div>
     </footer>
 

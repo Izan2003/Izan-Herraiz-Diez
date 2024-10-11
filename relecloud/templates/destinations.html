@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Destinations - Relecloud{% endblock %} {% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Our Destinations</h1>
+    <p class="lead">Explore the wonders of the universe with Relecloud.</p>
+    <hr class="my-4">
+    <p>Choose your next adventure from our exciting destinations.</p>
+</div>
+
+<div class="row">
+    {% for destination in destinations %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ destination.name }}</h5>
+                <p class="card-text">{{ destination.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

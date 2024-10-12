@@ -1,12 +1,18 @@
 ## APP (relecloud)
 
 from django.urls import path
-from . import views
+from .views import (
+    index, about, destinations, destination_detail, cruise_detail,
+    DestinationCreateView, DestinationUpdateView, DestinationDeleteView
+)
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
-    path('destinations/', views.destinations, name='destinations'),
-    path('destination/<int:destination_id>/', views.destination_detail, name='destination_detail'),
-    path('cruise/<int:cruise_id>/', views.cruise_detail, name='cruise_detail'),
+    path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('destinations/', destinations, name='destinations'),
+    path('destination/<int:destination_id>/', destination_detail, name='destination_detail'),
+    path('destination/add/', DestinationCreateView.as_view(), name='destination_add'),
+    path('destination/<int:pk>/edit/', DestinationUpdateView.as_view(), name='destination_edit'),
+    path('destination/<int:pk>/delete/', DestinationDeleteView.as_view(), name='destination_delete'),
+    path('cruise/<int:cruise_id>/', cruise_detail, name='cruise_detail'),
 ]

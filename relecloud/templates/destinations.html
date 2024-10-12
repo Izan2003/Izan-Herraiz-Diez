@@ -4,6 +4,7 @@
     <p class="lead">Explore the wonders of the universe with Relecloud.</p>
     <hr class="my-4">
     <p>Choose your next adventure from our exciting destinations.</p>
+    <a href="{% url 'destination_add' %}" class="btn btn-primary">Add New Destination</a>
 </div>
 
 <div class="row">
@@ -11,9 +12,11 @@
     <div class="col-md-4">
         <div class="card mb-4">
             <div class="card-body">
-                <a class="list-group-item list-group-item-action" href="{% url 'destination_detail' destination.id %}">
-                    {{ destination.name }}
-                </a>
+                <h5 class="card-title">{{ destination.name }}</h5>
+                <p class="card-text">{{ destination.description }}</p>
+                <a href="{% url 'destination_detail' destination.id %}" class="btn btn-primary">View Cruises</a>
+                <a href="{% url 'destination_edit' destination.id %}" class="btn btn-secondary">Edit</a>
+                <a href="{% url 'destination_delete' destination.id %}" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
